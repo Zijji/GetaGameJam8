@@ -10,11 +10,14 @@ public class PlayerMovement : MonoBehaviour
     public GameObject groundObject = null;
     public GameObject wallObjectLeft = null;
     public GameObject wallObjectRight = null;
-
+    public PhysicsMaterial2D thisPM2D = null;
 
     private SpriteRenderer thisSprR;
     private bool onGround = false;
     private bool canJump = false;
+    public enum DreamState { nightmare, dream};
+    public DreamState currentDreamState = DreamState.dream;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,9 +49,14 @@ public class PlayerMovement : MonoBehaviour
                 //Note: Only the rendering is affected. Use negative Transform.scale, if you want to affect all the other components (for example colliders).
             }
             else if (moveX > 0)
-            {   
+            {
                 thisSprR.flipX = false;
             }
+        }
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, gameObject.GetComponent<Rigidbody2D>().velocity.y);
+
         }
         //Flipping
         
@@ -61,4 +69,8 @@ public class PlayerMovement : MonoBehaviour
         
     }
     
+    public int returnDreamState()
+    {
+        return (int) currentDreamState;
+    }
 }

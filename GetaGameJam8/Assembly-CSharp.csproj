@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DreamStateController.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/GetaGameJam8/GetaGameJam8/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
