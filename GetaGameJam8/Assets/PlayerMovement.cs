@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
     private Rigidbody2D thisRb2d;
     public GameObject groundObject = null;
-    private SpriteRenderer thisSprR;
+    public GameObject wallObjectLeft = null;
+    public GameObject wallObjectRight = null;
 
-    
+
+    private SpriteRenderer thisSprR;
     private bool onGround = false;
     private bool canJump = false;
     // Start is called before the first frame update
@@ -28,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
         if (onGround)
         {
             canJump = true;
+        }
+        else
+        {
+            canJump = false;
         }
         //Makes movement
         float moveX = Input.GetAxis("Horizontal");
