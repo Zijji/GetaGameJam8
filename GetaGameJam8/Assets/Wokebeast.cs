@@ -7,6 +7,8 @@ public class Wokebeast : MonoBehaviour
     public Sprite wokeSprite = null;
     public Sprite sleepSprite = null;
     public float enemySpeed = 3.0f;
+    public GameObject groundCheckLeft = null;
+    public GameObject groundCheckRight = null;
 
     public int xMoveDirection;
     private SpriteRenderer getSprRen;
@@ -26,17 +28,37 @@ public class Wokebeast : MonoBehaviour
         //
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(xMoveDirection, 0) * enemySpeed;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, new Vector2(xMoveDirection, 0));
-        
-        if (hit.distance < 0.1f)
+        if( hit.collider != null)
         {
-            if(hit.collider.gameObject.layer == 8)//"Ground")
+            if (hit.distance < 0.1f)
+            {
+                if (hit.collider.gameObject.layer == 8)//"Ground")
+                {
+                    Flip();
+                }
+
+            }
+        }
+        if(xMoveDirection < 0)
+        { 
+            bool onGround = Physics2D.Linecast(transform.position, groundCheckLeft.transform.position, 1 << LayerMask.NameToLayer("Ground"));
+            if (onGround == false)
             {
                 Flip();
             }
-            
         }
+
+        if (xMoveDirection > 0)
+        {
+            bool onGround = Physics2D.Linecast(transform.position, groundCheckRight.transform.position, 1 << LayerMask.NameToLayer("Ground"));
+            if (onGround == false)
+            {
+                Flip();
+            }
+        }
+
         //Dreamstate controller
-        if(dreamstatecont != null)
+        if (dreamstatecont != null)
         {
             dreamState = dreamstatecont.GetComponent< DreamStateController>().GetDreamState();
         }
@@ -50,6 +72,58 @@ public class Wokebeast : MonoBehaviour
             getSprRen.sprite = sleepSprite;
         }
 
+        //Injures player
+        /*
+        RaycastHit2D player_hit = Physics2D.Raycast(transform.position, new Vector2(xMoveDirection, 0));
+        
+        if (player_hit.collider != null)
+        {
+            if (player_hit.distance < 0.2f)
+            {
+                if (player_hit.collider.gameObject.name == "player")//"Ground")
+                {
+                    player_hit.collider.gameObject.GetComponent<PlayerMovement>().WokeBeastAttacked();
+                    //Flip();
+                }
+
+            }
+        }
+        */
+        CheckPlayerCollision(new Vector2(-xMoveDirection, 0));
+        CheckPlayerCollision(new Vector2(xMoveDirection, 0));
+
+        /*
+        RaycastHit2D player_hit_back = Physics2D.Raycast(transform.position, new Vector2(-xMoveDirection, 0));
+        if (player_hit_back.collider != null)
+        {
+            if (player_hit_back.distance < 0.2f)
+            {
+                if (player_hit_back.collider.gameObject.name == "player")//"Ground")
+                {
+                    player_hit_back.collider.gameObject.GetComponent<PlayerMovement>().WokeBeastAttacked();
+                    //Flip();
+                }
+
+            }
+        }
+        */
+    }
+
+    void CheckPlayerCollision(Vector2 getVector)
+    {
+        RaycastHit2D player_hit = Physics2D.Raycast(transform.position, getVector);
+        if (player_hit.collider != null)
+        {
+            if (player_hit.distance < 0.2f)
+            {
+                if (player_hit.collider.gameObject.name == "player")//"Ground")
+                {
+                    player_hit.collider.gameObject.GetComponent<PlayerMovement>().WokeBeastAttacked( (int) Mathf.Sign(getVector.x));
+                    //Flip();
+                }
+
+            }
+        }
     }
 
     void Flip()

@@ -20,6 +20,13 @@ public class DreamStateController : MonoBehaviour
 
     public int GetDreamState()
     {
-        return player.GetComponent<PlayerMovement>().returnDreamState();
+        if(player != null)
+        {
+            return player.GetComponent<PlayerMovement>().returnDreamState();
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
