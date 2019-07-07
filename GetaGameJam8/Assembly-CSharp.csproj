@@ -55,8 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CameraDreamState.cs" />
+     <Compile Include="Assets\CameraFollow.cs" />
      <Compile Include="Assets\DreamStateController.cs" />
      <Compile Include="Assets\PlayerMovement.cs" />
+     <Compile Include="Assets\Wokebeast.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/UnityProjects/GetaGameJam8/GetaGameJam8/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

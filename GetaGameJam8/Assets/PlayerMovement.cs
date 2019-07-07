@@ -63,8 +63,11 @@ public class PlayerMovement : MonoBehaviour
         //Getting jump input
         if ((Input.GetAxis("Jump") != 0) && canJump)
         {
+            Jump();
+            /*
             thisRb2d.velocity = new Vector2(thisRb2d.velocity.x, jumpspeed);
             canJump = false;
+            */
         }
         
     }
@@ -72,5 +75,21 @@ public class PlayerMovement : MonoBehaviour
     public int returnDreamState()
     {
         return (int) currentDreamState;
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Enemy")
+        {
+            Jump();
+            //Destroy(col.gameObject);
+        }
+        
+    }
+ 
+    void Jump()
+    {
+        thisRb2d.velocity = new Vector2(thisRb2d.velocity.x, jumpspeed);
+        canJump = false;
     }
 }

@@ -15,7 +15,7 @@ public class DreamStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetDreamState());
+        //Debug.Log(GetDreamState());
     }
 
     public int GetDreamState()
