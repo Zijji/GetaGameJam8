@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerScoreUI.gameObject.GetComponent<Text>().text = ("Score: " + playerScore);
+        playerScoreUI.gameObject.GetComponent<Text>().text = ("Score: " + playerScore + "/28");
 
     }
 
@@ -19,7 +19,7 @@ void OnTriggerEnter2D(Collider2D col)
 {
         if (col.gameObject.tag == "CoinPickup")
         {
-            playerScore += 50;
+            playerScore += 1;
             Destroy(col.gameObject);
         }
     }

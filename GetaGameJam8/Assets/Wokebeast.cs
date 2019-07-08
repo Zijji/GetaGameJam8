@@ -131,10 +131,12 @@ public class Wokebeast : MonoBehaviour
         if (xMoveDirection > 0 )
         {
             xMoveDirection = -1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         else
         {
             xMoveDirection = 1;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="Assets\ColourChange.cs" />
     <Compile Include="Assets\DreamStateController.cs" />
     <Compile Include="Assets\EyeOpener.cs" />
+    <Compile Include="Assets\Fade.cs" />
     <Compile Include="Assets\Loadscene.cs" />
     <Compile Include="Assets\Moon.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\SmallMoonPickup.cs" />
     <Compile Include="Assets\Wokebeast.cs" />
     <Compile Include="Assets\bopFodder.cs" />
+    <Compile Include="Assets\reset.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/ldjr2/OneDrive/Documents/GetaGameJam8/GetaGameJam8/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

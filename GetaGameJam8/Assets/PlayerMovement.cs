@@ -45,10 +45,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Scene1");
-        }
         //Checks if on ground
         onGround = Physics2D.Linecast(transform.position, groundObject.transform.position, 1 << LayerMask.NameToLayer("Ground"));
         if (onGround == false)
