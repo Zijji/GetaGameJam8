@@ -64,7 +64,9 @@
     <Compile Include="Assets\Begin.cs" />
     <Compile Include="Assets\CameraDreamState.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
+    <Compile Include="Assets\ColourChange.cs" />
     <Compile Include="Assets\DreamStateController.cs" />
+    <Compile Include="Assets\EyeOpener.cs" />
     <Compile Include="Assets\Loadscene.cs" />
     <Compile Include="Assets\Moon.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
