@@ -829,12 +829,12 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.173
+      value: -6.47
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.032
+      value: 2.99
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
@@ -889,7 +889,7 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.3832417
+      value: 16.165396
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a429d4bcb448742908e0762d56e903, type: 3}
@@ -1001,16 +1001,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2521030327307950187, guid: 24c36790aef907a4087307b62a64d1ee,
-        type: 3}
-      propertyPath: MusicSource
-      value: 
-      objectReference: {fileID: 768440391}
     - target: {fileID: 4823593903645748239, guid: 24c36790aef907a4087307b62a64d1ee,
         type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 2521030327307950187, guid: 24c36790aef907a4087307b62a64d1ee,
+        type: 3}
+      propertyPath: MusicSource
+      value: 
+      objectReference: {fileID: 768440391}
     - target: {fileID: 4823593903645748234, guid: 24c36790aef907a4087307b62a64d1ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1065,6 +1065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823593902367932914, guid: 24c36790aef907a4087307b62a64d1ee,
+        type: 3}
+      propertyPath: orthographic size
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24c36790aef907a4087307b62a64d1ee, type: 3}
@@ -1249,8 +1254,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177.48, y: 40}
-  m_SizeDelta: {x: 376.8, y: 274}
+  m_AnchoredPosition: {x: 177.48, y: 40.239}
+  m_SizeDelta: {x: 376.8, y: 289.6}
   m_Pivot: {x: 0.40945363, y: 0.40555206}
 --- !u!114 &1452941551
 MonoBehaviour:
@@ -1285,8 +1290,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Design: Liam Ralston, Nick Sargent \nProgramming: Edward Ingle, Liam Ralston\nMusic:
-    Yuri Gore"
+  m_Text: 'Design: Nick Sargent, Liam Ralston
+
+    Programming: Edward Ingle, Liam
+    Ralston
+
+    Art Design: Liam Ralston, Nick Sargent
+
+    Music: Yuri Gore'
 --- !u!222 &1452941552
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1453,8 +1464,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -149, y: 58.029}
-  m_SizeDelta: {x: 526, y: 274}
+  m_AnchoredPosition: {x: -193, y: 77}
+  m_SizeDelta: {x: 466.63, y: 227.76}
   m_Pivot: {x: 0.40945363, y: 0.40555206}
 --- !u!114 &1690450048
 MonoBehaviour:
@@ -1489,7 +1500,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Controls: \nLeft\nRight\nSpace\nr to restart\nEnter to begin"
+  m_Text: "Controls: \n- Left\n- Right\n- Space\n- 'r' to restart\n- 'Enter' to begin\nCollect
+    all the coins"
 --- !u!222 &1690450049
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1513,12 +1525,12 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.591
+      value: 6.732
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.11
+      value: 3.111
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
@@ -1573,7 +1585,7 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 7.885035
+      value: 19.460266
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a429d4bcb448742908e0762d56e903, type: 3}
@@ -1592,12 +1604,12 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.55
+      value: 0.886
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -2.779
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
@@ -1647,12 +1659,12 @@ PrefabInstance:
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 34.97677
+      value: 52.0157
       objectReference: {fileID: 0}
     - target: {fileID: 498177828780848135, guid: d0a429d4bcb448742908e0762d56e903,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.288591
+      value: 24.4678
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a429d4bcb448742908e0762d56e903, type: 3}

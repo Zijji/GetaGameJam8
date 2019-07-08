@@ -8,6 +8,7 @@ public class AudioMix : MonoBehaviour
     public AudioClip DreamClip;
     public AudioClip NightmareClip;
     public AudioSource MusicSource;
+    public bool isDead = false;
     private int dreamState = -1;
     private int soundCheck = -1;
     // Start is called before the first frame update
@@ -43,7 +44,7 @@ public class AudioMix : MonoBehaviour
                 MusicSource.Play();
             }
         }
-       
-        
+ 
+
     }
 }

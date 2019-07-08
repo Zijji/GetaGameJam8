@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Scene scene = SceneManager.GetActiveScene();
-
     public float jumpspeed;
     public float movementSpeed;
     private Rigidbody2D thisRb2d;
@@ -190,7 +188,8 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         gameObject.GetComponent<SFX>().gameOverBool = true;
-        Destroy(gameObject);
+        gameObject.GetComponent<Score>().isDead = true;
+        //SceneManager.LoadScene("DeathScene");
     }
 
     public void WokeBeastAttacked(int direction)
