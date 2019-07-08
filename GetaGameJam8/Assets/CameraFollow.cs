@@ -6,6 +6,10 @@ public class CameraFollow : MonoBehaviour
 {
     public GameObject target;
     private Vector3 targetPrevPos;
+    public float xMin;
+    public float xMax;
+    public float yMin;
+    public float yMax;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,15 +17,13 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+
+    void LateUpdate()
     {
-        if (target != null)
-        {
-            if (targetPrevPos != target.transform.position)
-            {
-                transform.position = new Vector3(target.transform.position.x, transform.position.y, transform.position.z);
-                targetPrevPos = target.transform.position;
-            }
-        }
+        //this code sets the boundaries in the component section of Unity flexibly.
+        //for each level you can change the xMin etc. in the component.
+        float x = Mathf.Clamp(target.transform.position.x, xMin, xMax);
+        float y = Mathf.Clamp(target.transform.position.y, yMin, yMax);
+        gameObject.transform.position = new Vector3(x, y, gameObject.transform.position.z);
     }
 }

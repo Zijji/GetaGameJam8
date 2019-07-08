@@ -1,9 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    Scene scene = SceneManager.GetActiveScene();
+
     public float jumpspeed;
     public float movementSpeed;
     private Rigidbody2D thisRb2d;
@@ -28,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public DreamState currentDreamState = DreamState.dream;
     private float prevY;
 
+    public GameObject ScoreUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Scene1");
+        }
         //Checks if on ground
         onGround = Physics2D.Linecast(transform.position, groundObject.transform.position, 1 << LayerMask.NameToLayer("Ground"));
         if (onGround == false)
@@ -111,8 +121,8 @@ public class PlayerMovement : MonoBehaviour
         //Invuln frame
         if (isInvuln)
         {
-            invulnFrameDuration--;
-            if (invulnFrameDuration < 0)
+            invulnFrames--;
+            if (invulnFrames < 0)
             {
                 isInvuln = false;
             }
@@ -121,6 +131,10 @@ public class PlayerMovement : MonoBehaviour
         //CheckPlayerCollision(new Vector2(0f, 0f));
     }
 
+    private void PlayerScore()
+    {
+        throw new NotImplementedException();
+    }
 
     public int returnDreamState()
     {

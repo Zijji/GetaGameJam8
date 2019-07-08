@@ -48,6 +48,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -96,6 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wokeSprite: {fileID: 21300000, guid: da145313ea2dd6b458adc5a12fbbcddc, type: 3}
   sleepSprite: {fileID: 21300000, guid: 773fa8783ea854243822bf7b60ca411f, type: 3}
+  enemySpeed: 3
+  groundCheckLeft: {fileID: 0}
+  groundCheckRight: {fileID: 0}
+  xMoveDirection: 1
 --- !u!50 &97652028832825785
 Rigidbody2D:
   serializedVersion: 4
