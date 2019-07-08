@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioMix.cs" />
     <Compile Include="Assets\Begin.cs" />
     <Compile Include="Assets\CameraDreamState.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Loadscene.cs" />
     <Compile Include="Assets\Moon.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\SFX.cs" />
     <Compile Include="Assets\Score.cs" />
     <Compile Include="Assets\Seekerbeast.cs" />
     <Compile Include="Assets\SeekerbeastSpawner.cs" />

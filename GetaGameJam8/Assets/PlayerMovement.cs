@@ -112,6 +112,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetAxis("Jump") != 0) && canJump)
         {
             Jump();
+            gameObject.GetComponent<SFX>().jumpBool = true;
             /*
             thisRb2d.velocity = new Vector2(thisRb2d.velocity.x, jumpspeed);
             canJump = false;
@@ -146,6 +147,7 @@ public class PlayerMovement : MonoBehaviour
         if (col.gameObject.tag == "Enemy")
         {
             Jump();
+            gameObject.GetComponent<SFX>().bounceBool = true;
             //Destroy(col.gameObject);
         }
         if (col.gameObject.tag == "Death")
@@ -168,6 +170,7 @@ public class PlayerMovement : MonoBehaviour
         {
             coinScore++;
             Destroy(col.gameObject);
+            gameObject.GetComponent<SFX>().coinBool = true;
         }
         if (col.gameObject.tag == "PickupMoon")
         {
@@ -175,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 currentDreamState = DreamState.dream;
                 Destroy(col.gameObject);
+                gameObject.GetComponent<SFX>().coinBool = true;
             }
         }
     }
@@ -184,10 +188,12 @@ public class PlayerMovement : MonoBehaviour
     {
         thisRb2d.velocity = new Vector2(thisRb2d.velocity.x, jumpspeed);
         canJump = false;
+        gameObject.GetComponent<SFX>().jumpBool = true;
     }
 
     public void Die()
     {
+        gameObject.GetComponent<SFX>().gameOverBool = true;
         Destroy(gameObject);
     }
 
